@@ -1,11 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Data;
 using Data.EmbeddedAccess;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Rewrite;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,6 +31,19 @@ namespace WebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.Configure<MvcOptions>(options =>
+            //{
+            //    options.Filters.Add(new RequireHttpsAttribute());
+            //});
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie()
+                .AddGoogle(gOptions =>
+                {
+                    gOptions.ClientId = "1033124325959-3kvj311bbhjdtha1pqh031knucau0d1v.apps.googleusercontent.com";
+                    gOptions.ClientSecret = "qKZnYiskhuD6CU0kExUbn9vv";
+                });
+
             services.AddMvc();
 
             services.AddOptions();
@@ -70,6 +87,11 @@ namespace WebApp
                     context.Context.Response.Headers["Expires"] = clientCachingConfig.ExpiresHeader;
                 }
             });
+
+            //var options = new RewriteOptions().AddRedirectToHttps(302, 44300);
+            //app.UseRewriter(options);
+
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
