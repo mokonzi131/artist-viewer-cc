@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Data;
+using Data.EmbeddedAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
@@ -9,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using WebApp.Config;
+using WebApp.Services;
 
 namespace WebApp
 {
@@ -33,6 +36,11 @@ namespace WebApp
                 options.PragmaHeader = Configuration.GetValue("StaticFiles:Headers:Pragma", "cache");
                 options.ExpiresHeader = Configuration.GetValue<string>("StaticFiles:Headers:Expires", null);
             });
+
+            // NOTE: could configure which Repository type to use with settings, but to save on time, just hard-coding the EmbeddedRepository dependency here
+            services.AddTransient<IArtistRepository, EmbeddedArtistRepository>();
+
+            services.AddTransient<ArtistService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
