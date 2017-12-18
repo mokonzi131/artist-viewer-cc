@@ -10,8 +10,13 @@ namespace WebApp.Controllers
 {
     public class HomeController : Controller
     {
-        [Authorize]
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public IActionResult App()
         {
             return View();
         }

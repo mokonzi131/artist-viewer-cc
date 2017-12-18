@@ -18,16 +18,16 @@ namespace WebApp.Controllers
         {
             var authProps = new AuthenticationProperties
             {
-                RedirectUri = "/home/index"
+                RedirectUri = "/home/app"
             };
 
             return new ChallengeResult(provider, authProps);
         }
 
-        public IActionResult Logout()
+        public async Task<IActionResult> Logout()
         {
-            //return View();
-            return Ok("logout");
+            await HttpContext.SignOutAsync();
+            return RedirectToAction(nameof(Login));
         }
 
         public IActionResult AccessDenied()
