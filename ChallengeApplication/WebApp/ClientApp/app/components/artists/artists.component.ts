@@ -29,13 +29,14 @@ export class ArtistsComponent {
         // apply filters to artists cache
         searchFilter.subscribe(searchTerm => {
             this._service.ArtistCache.subscribe(artists => {
-                this._loadGrid(artists.filter(artist => artist.name.includes(searchTerm)));
+                let foundArtists = artists.filter(artist => artist.name.toLowerCase().includes(searchTerm));
+                this._loadGrid(foundArtists);
             });
         });
     }
 
     public handleSearchTextChanged() {
-        let searchTerm = this.searchText.trim();
+        let searchTerm = this.searchText.trim().toLowerCase();
         this._searchTextSubject.next(searchTerm);
     }
 

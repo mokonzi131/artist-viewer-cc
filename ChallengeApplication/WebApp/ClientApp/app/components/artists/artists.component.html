@@ -3,7 +3,8 @@
 <p *ngIf="!artists"><em>Loading...</em></p>
 
 <div *ngIf="artists">
-    <input type="text" [(ngModel)]="searchText" (ngModelChange)="handleSearchTextChanged()" />
+    <label for="nameSearchBox">Search By Name:</label>
+    <input type="text" id="nameSearchBox" [(ngModel)]="searchText" (ngModelChange)="handleSearchTextChanged()" />
     <table class='table' *ngIf="artists">
         <thead>
             <tr>
