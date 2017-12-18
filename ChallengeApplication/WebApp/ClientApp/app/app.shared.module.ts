@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { ArtistsComponent } from './components/artists/artists.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 @NgModule({
     declarations: [
@@ -18,6 +19,7 @@ import { ArtistsComponent } from './components/artists/artists.component';
         CounterComponent,
         FetchDataComponent,
         ArtistsComponent,
+        LogoutComponent,
         HomeComponent
     ],
     imports: [
@@ -30,7 +32,7 @@ import { ArtistsComponent } from './components/artists/artists.component';
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
             { path: 'artists', component: ArtistsComponent },
-            { path: 'logout', component: FetchDataComponent },
+            { path: 'logout', component: LogoutComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]
