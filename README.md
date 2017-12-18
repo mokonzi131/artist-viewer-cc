@@ -1,20 +1,10 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Overview
+This application demonstrates a full stack implementation of an artist viewer. There is a SPA (built with Angular), a website hosting the SPA (built with ASP.NET core), and an API (same ASP.NET core). The app also includes a simple OAuth2 federated login which requires you to sign-in with Google in order to access the viewer.
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
-
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
-
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
-
-If you want to learn more about creating good readme files then refer the following [guidelines](https://www.visualstudio.com/en-us/docs/git/create-a-readme). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+# Instructions
+1. Download source
+2. Install `dotnet` SDK (if not already installed). 
+    - Here are instructions for MAC (https://www.microsoft.com/net/learn/get-started/macos)
+    - Here are instructions for Windows (https://www.microsoft.com/net/learn/get-started/windows)
+3. Navigate to `<InstallDir>/ChallengeApplication/WebApp/` and type `dotnet run` on the command line
+    - may take some time initially to pull down all the packages, especially the NPM packages for Angular. Took me about 5 minutes on my MAC in a fresh install.
