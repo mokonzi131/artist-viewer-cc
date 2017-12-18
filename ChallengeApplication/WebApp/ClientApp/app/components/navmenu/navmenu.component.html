@@ -27,6 +27,16 @@
                         <span class='glyphicon glyphicon-th-list'></span> Fetch data
                     </a>
                 </li>
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/artists']">
+                        <span class="glyphicon glyphicon-picture"></span> Artist Viewer
+                    </a>
+                </li>
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['logout']">
+                        <span class="glyphicon glyphicon-log-out"></span> Logout
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
