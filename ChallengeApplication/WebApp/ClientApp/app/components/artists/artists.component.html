@@ -2,21 +2,24 @@
 
 <p *ngIf="!artists"><em>Loading...</em></p>
 
-<table class='table' *ngIf="artists">
-    <thead>
-        <tr>
-            <th>Picture</th>
-            <th>Id</th>
-            <th>Name</th>
-            <th>More Information</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let artist of artists">
-            <td><img src="{{artist.imageUrl}}" width="40" height="40" /></td>
-            <td>{{ artist.id }}</td>
-            <td>{{ artist.name }}</td>
-            <td><a href="{{artist.artistUrl}}" target="_blank">{{artist.artistUrl}}</a></td>
-        </tr>
-    </tbody>
-</table>
+<div *ngIf="artists">
+    <input type="text" [(ngModel)]="searchText" (ngModelChange)="handleSearchTextChanged()" />
+    <table class='table' *ngIf="artists">
+        <thead>
+            <tr>
+                <th>Picture</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>More Information</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let artist of artists">
+                <td><img src="{{artist.imageUrl}}" width="40" height="40" /></td>
+                <td>{{ artist.id }}</td>
+                <td>{{ artist.name }}</td>
+                <td><a href="{{artist.artistUrl}}" target="_blank">{{artist.artistUrl}}</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

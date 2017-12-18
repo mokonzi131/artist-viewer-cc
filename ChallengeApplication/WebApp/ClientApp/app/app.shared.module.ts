@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
+import { ArtistService } from './services/artist.service';
+
 import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
@@ -29,7 +31,8 @@ import { LogoutComponent } from './components/logout/logout.component';
             { path: 'logout', component: LogoutComponent },
             { path: '**', redirectTo: 'home' }
         ])
-    ]
+    ],
+    providers: [ArtistService]
 })
 export class AppModuleShared {
 }
