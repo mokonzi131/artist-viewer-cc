@@ -5,6 +5,6 @@
 })
 export class LogoutComponent {
     constructor( @Inject('BASE_URL') baseUrl: string) {
-        document.location.href = baseUrl + '/Account/Logout';
+        document.location.href = baseUrl + 'Account/Logout';
     }
 }
