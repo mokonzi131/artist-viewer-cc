@@ -11,6 +11,7 @@ export interface IArtistData {
     name: string;
     imageUrl: string;
     artistUrl: string;
+    comments: number;
 }
 
 @Injectable()

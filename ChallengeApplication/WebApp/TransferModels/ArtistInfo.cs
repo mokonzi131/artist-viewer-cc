@@ -11,5 +11,6 @@ namespace WebApp.TransferModels
         public string Name { get; set; }
         public string ImageUrl { get; set; }
         public string ArtistUrl { get; set; }
+        public int Comments { get; set; }
     }
 }

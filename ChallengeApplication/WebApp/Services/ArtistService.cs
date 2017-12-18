@@ -39,7 +39,8 @@ namespace WebApp.Services
                 Id = artist.Id,
                 Name = artist.Name,
                 ArtistUrl = artist.ArtistUrl,
-                ImageUrl = artist.ImageUrl
+                ImageUrl = artist.ImageUrl,
+                Comments = artist.Comments
             };
         }
     }

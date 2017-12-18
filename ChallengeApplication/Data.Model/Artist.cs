@@ -14,6 +14,7 @@ namespace Data.Model
         public string Members { get; set; }
         public string Website { get; set; }
         public string ImageUrl { get; set; }
+        public int Comments { get; set; }
         // TODO (mlandes) many more fields...
     }
 }

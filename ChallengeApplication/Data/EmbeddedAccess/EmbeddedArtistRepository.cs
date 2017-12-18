@@ -30,7 +30,8 @@ namespace Data.EmbeddedAccess
                 { "Bio", "artist_bio" },
                 { "Members", "artist_members" },
                 { "Website", "artist_website" },
-                { "ImageUrl", "artist_image_file" }
+                { "ImageUrl", "artist_image_file" },
+                { "Comments", "artist_comments" }
             };
         }
 
